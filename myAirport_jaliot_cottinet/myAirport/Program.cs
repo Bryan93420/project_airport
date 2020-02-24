@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace myAirport
+namespace JC.myAirport
 {
     class Program
     {
