@@ -4,20 +4,19 @@ using System.Text;
 
 namespace JC.MyAirport.EF
 {
-    class Bagage
+    public class Bagage
     {
-        public int id_bagage { get; set; }
-        
-        public Vol vol { get; set; }
-        public int id_vol { get; set; }
-        public string code_iata { get; set; }
-        public DateTime date_creation { get; set; }
-        public string classe { get; set; }
-        public Boolean prioritaire { get; set; }
-        public string sta { get; set; }
-        public string ssur { get; set; }
-        public string destination { get; set; }
-        public string escale { get; set; }
+        public int BagageId { get; set; }
+        public Vol Vol { get; set; }
+        public int VolId { get; set; }
+        public string CodeIata { get; set; }
+        public DateTime DateCreation { get; set; }
+        public string Classe { get; set; }
+        public Boolean Prioritaire { get; set; }
+        public string Sta { get; set; }
+        public string Ssur { get; set; }
+        public string Destination { get; set; }
+        public string Escale { get; set; }
 
     }
 }

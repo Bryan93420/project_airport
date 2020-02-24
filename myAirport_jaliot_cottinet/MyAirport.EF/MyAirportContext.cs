@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace JC.MyAirport.EF
 {
-    class MyAirportContext : DbContext
+    public class MyAirportContext : DbContext
     {
             public DbSet<Vol> Vols { get; set; }
             public DbSet<Bagage> Bagages { get; set; }
