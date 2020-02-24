@@ -4,14 +4,16 @@ using JC.MyAirport.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JC.MyAirport.EF.Migrations
 {
     [DbContext(typeof(MyAirportContext))]
-    partial class MyAirportContextModelSnapshot : ModelSnapshot
+    [Migration("20200224104429_Initial3")]
+    partial class Initial3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -73,8 +75,8 @@ namespace JC.MyAirport.EF.Migrations
                     b.Property<string>("Des")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Dhc")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Dhc")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Imm")
                         .HasColumnType("nvarchar(max)");
