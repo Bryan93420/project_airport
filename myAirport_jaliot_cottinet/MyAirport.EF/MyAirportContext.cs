@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
+
 
 namespace JC.MyAirport.EF
 {
     public class MyAirportContext : DbContext
     {
+            public static readonly ILoggerFactory MyAirportLoggerFactory
+        = LoggerFactory.Create(builder => { builder.AddConsole(); });
             public DbSet<Vol> Vols { get; set; }
             public DbSet<Bagage> Bagages { get; set; }
 
