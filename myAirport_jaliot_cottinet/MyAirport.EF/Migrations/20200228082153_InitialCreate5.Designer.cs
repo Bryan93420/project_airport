@@ -4,14 +4,16 @@ using JC.MyAirport.EF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JC.MyAirport.EF.Migrations
 {
     [DbContext(typeof(MyAirportContext))]
-    partial class MyAirportContextModelSnapshot : ModelSnapshot
+    [Migration("20200228082153_InitialCreate5")]
+    partial class InitialCreate5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
