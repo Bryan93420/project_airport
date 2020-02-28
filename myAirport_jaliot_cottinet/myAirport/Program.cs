@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Linq;
 using JC.MyAirport.EF;
+using Microsoft.Extensions.Logging;
 
 namespace JC.myAirport
 {
+
     class Program
     {
+        public static readonly ILoggerFactory MyAirportLoggerFactory
+        = LoggerFactory.Create(builder => { builder.AddConsole(); });
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
