@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using JC.MyAirport.EF;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace JC.myAirport
 {
@@ -14,7 +17,11 @@ namespace JC.myAirport
         {
             Console.WriteLine("Hello World!");
             System.Console.WriteLine("MyAirport project bonjour!!");
-            using (var db = new MyAirportContext())
+
+            var optionsBuilder = new DbContextOptionsBuilder<MyAirportContext>();
+            optionsBuilder.UseSqlite(ConfigurationManager.ConnectionStrings["MyAirportContext"].ConnectionString);
+
+            using (var db = new MyAirportContext(optionsBuilder.Options))
             {
                 // Create
                 Console.WriteLine("Création du vol LH1232");

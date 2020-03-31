@@ -29,16 +29,23 @@ namespace MyAirportWebApi.Controllers
 
         // GET: api/Vols/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Vol>> GetVol(int id)
+        public async Task<ActionResult<Vol>> GetVol(int id, [FromQuery] bool bagages = false)
         {
             var vol = await _context.Vols.FindAsync(id);
-
+/*            var bag = await _context.Vols.Include(v => v.Bagages;
+*/
             if (vol == null)
             {
                 return NotFound();
             }
-
-            return vol;
+            if (bagages)
+            {
+                return vol;
+            }
+            else
+            {   
+                return vol;
+            }
         }
 
         // PUT: api/Vols/5
