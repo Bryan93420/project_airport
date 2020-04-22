@@ -17,7 +17,9 @@ namespace JC.MyAirport.EF
 
         public IEnumerable<Bagage> Bagages { get; set; }
 
-        public void Vole(string compagnie, string ligne, DateTime dhc)
+
+        public Vol() { }
+        public Vol(string compagnie, string ligne, DateTime dhc)
         {
             Cie = compagnie;
             Lig = ligne;

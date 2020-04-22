@@ -28,6 +28,9 @@ namespace MyAirportWebApi.Controllers
         }
 
         // GET: api/Bagages/5
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpGet("{id}")]
         public async Task<ActionResult<Bagage>> GetBagage(int id)
         {

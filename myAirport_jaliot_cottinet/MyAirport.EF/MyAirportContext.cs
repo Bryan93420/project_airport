@@ -12,6 +12,7 @@ namespace JC.MyAirport.EF
         public MyAirportContext(DbContextOptions<MyAirportContext> options) : base(options) 
         { }
 
+
         public DbSet<Vol> Vols { get; set; }
         public DbSet<Bagage> Bagages { get; set; }
 
