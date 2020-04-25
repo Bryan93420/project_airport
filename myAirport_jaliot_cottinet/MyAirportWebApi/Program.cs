@@ -9,13 +9,22 @@ using Microsoft.Extensions.Logging;
 
 namespace JC.MyAirport.WebApi
 {
+    /// <summary>
+    /// Program pour la webAPI
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Fonction Main
+        /// </summary>
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }
 
+        /// <summary>
+        /// Fonction pour créer l'HostBuilder
+        /// </summary>
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

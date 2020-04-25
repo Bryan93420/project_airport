@@ -9,25 +9,35 @@ using JC.MyAirport.EF;
 
 namespace MyAirportWebApi.Controllers
 {
+    /// <summary>
+    /// Controller Vol pour webAPI
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class VolsController : ControllerBase
     {
         private readonly MyAirportContext _context;
 
+        /// <summary>
+        /// Objet VolsController
+        /// </summary>
         public VolsController(MyAirportContext context)
         {
             _context = context;
         }
-
-        // GET: api/Vols
+        /// <summary>
+        /// Fonction GetVols
+        /// GET: api/Vols
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Vol>>> GetVols()
         {
             return await _context.Vols.ToListAsync();
         }
-
-        // GET: api/Vols/5?bool bagage
+        /// <summary>
+        /// Fonction GetVol
+        /// GET: api/Vols/5?bool bagage
+        /// </summary>
         [HttpGet("{id}")]
         public async Task<ActionResult<Vol>> GetVol(int id, [FromQuery] bool bagages = false)
         {
@@ -52,9 +62,12 @@ namespace MyAirportWebApi.Controllers
 
         }
 
-        // PUT: api/Vols/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+        /// <summary>
+        /// Fonction PutVol
+        /// PUT: api/Vols/5
+        /// To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        /// more details see https://aka.ms/RazorPagesCRUD.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutVol(int id, Vol vol)
         {
@@ -84,9 +97,12 @@ namespace MyAirportWebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Vols
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+        /// <summary>
+        /// Fonction PostVol
+        /// POST: api/Vols
+        /// To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        /// more details see https://aka.ms/RazorPagesCRUD.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<Vol>> PostVol(Vol vol)
         {
@@ -96,7 +112,10 @@ namespace MyAirportWebApi.Controllers
             return CreatedAtAction("GetVol", new { id = vol.VolId }, vol);
         }
 
-        // DELETE: api/Vols/5
+        /// <summary>
+        /// Fonction DeleteVol
+        /// DELETE: api/Vols/5
+        /// </summary>
         [HttpDelete("{id}")]
         public async Task<ActionResult<Vol>> DeleteVol(int id)
         {

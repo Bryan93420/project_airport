@@ -9,25 +9,36 @@ using JC.MyAirport.EF;
 
 namespace MyAirportWebApi.Controllers
 {
+    /// <summary>
+    /// Controller Bagage pour webAPI
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class BagagesController : ControllerBase
     {
         private readonly MyAirportContext _context;
 
+        /// <summary>
+        /// Objet Bagage Controller
+        /// </summary>
         public BagagesController(MyAirportContext context)
         {
             _context = context;
         }
-
-        // GET: api/Bagages
+        /// <summary>
+        /// Fonction Get Bagages
+        /// GET: api/Bagages
+        /// </summary>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Bagage>>> GetBagages()
         {
             return await _context.Bagages.ToListAsync();
         }
 
-        // GET: api/Bagages/5
+        /// <summary>
+        /// Fonction Get Bagage
+        /// GET: api/Bagages/5
+        /// </summary>
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -44,9 +55,13 @@ namespace MyAirportWebApi.Controllers
             return bagage;
         }
 
-        // PUT: api/Bagages/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+
+        /// <summary>
+        /// Fonction PutBagage
+        /// PUT: api/Bagages/5
+        /// To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        /// more details see https://aka.ms/RazorPagesCRUD.
+        /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutBagage(int id, Bagage bagage)
         {
@@ -76,9 +91,12 @@ namespace MyAirportWebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Bagages
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
+        /// <summary>
+        /// Fonction Post Bagage
+        /// POST: api/Bagages
+        /// To protect from overposting attacks, please enable the specific properties you want to bind to, for
+        /// more details see https://aka.ms/RazorPagesCRUD.
+        /// </summary>
         [HttpPost]
         public async Task<ActionResult<Bagage>> PostBagage(Bagage bagage)
         {
@@ -88,7 +106,11 @@ namespace MyAirportWebApi.Controllers
             return CreatedAtAction("GetBagage", new { id = bagage.BagageId }, bagage);
         }
 
-        // DELETE: api/Bagages/5
+        /// <summary>
+        /// Fonction Delete Bagage
+        /// DELETE: api/Bagages/5
+        /// </summary>
+
         [HttpDelete("{id}")]
         public async Task<ActionResult<Bagage>> DeleteBagage(int id)
         {

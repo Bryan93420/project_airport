@@ -18,16 +18,30 @@ using Microsoft.OpenApi.Models;
 
 namespace JC.MyAirport.WebApi
 {
+    /// <summary>
+    /// Classe Startup pour instancier les services
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Fonction Startup
+        /// </summary>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Objet Configuration
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+
+        /// <summary>
+        /// Fonction ConfigureServices
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<MyAirportContext>(option => option.UseSqlServer(@"Server = (localdb)\mssqllocaldb; Database = MyAirport; Integrated Security = True"));
@@ -44,7 +58,10 @@ namespace JC.MyAirport.WebApi
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// Fonction Configure
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 

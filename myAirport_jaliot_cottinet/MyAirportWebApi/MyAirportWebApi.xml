@@ -4,5 +4,135 @@
         <name>MyAirportWebApi</name>
     </assembly>
     <members>
+        <member name="T:MyAirportWebApi.Controllers.BagagesController">
+            <summary>
+            Controller Bagage pour webAPI
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.BagagesController.#ctor(JC.MyAirport.EF.MyAirportContext)">
+            <summary>
+            Objet Bagage Controller
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.BagagesController.GetBagages">
+            <summary>
+            Fonction Get Bagages
+            GET: api/Bagages
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.BagagesController.GetBagage(System.Int32)">
+            <summary>
+            Fonction Get Bagage
+            GET: api/Bagages/5
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.BagagesController.PutBagage(System.Int32,JC.MyAirport.EF.Bagage)">
+            <summary>
+            Fonction PutBagage
+            PUT: api/Bagages/5
+            To protect from overposting attacks, please enable the specific properties you want to bind to, for
+            more details see https://aka.ms/RazorPagesCRUD.
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.BagagesController.PostBagage(JC.MyAirport.EF.Bagage)">
+            <summary>
+            Fonction Post Bagage
+            POST: api/Bagages
+            To protect from overposting attacks, please enable the specific properties you want to bind to, for
+            more details see https://aka.ms/RazorPagesCRUD.
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.BagagesController.DeleteBagage(System.Int32)">
+            <summary>
+            Fonction Delete Bagage
+            DELETE: api/Bagages/5
+            </summary>
+        </member>
+        <member name="T:MyAirportWebApi.Controllers.VolsController">
+            <summary>
+            Controller Vol pour webAPI
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.VolsController.#ctor(JC.MyAirport.EF.MyAirportContext)">
+            <summary>
+            Objet VolsController
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.VolsController.GetVols">
+            <summary>
+            Fonction GetVols
+            GET: api/Vols
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.VolsController.GetVol(System.Int32,System.Boolean)">
+            <summary>
+            Fonction GetVol
+            GET: api/Vols/5?bool bagage
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.VolsController.PutVol(System.Int32,JC.MyAirport.EF.Vol)">
+            <summary>
+            Fonction PutVol
+            PUT: api/Vols/5
+            To protect from overposting attacks, please enable the specific properties you want to bind to, for
+            more details see https://aka.ms/RazorPagesCRUD.
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.VolsController.PostVol(JC.MyAirport.EF.Vol)">
+            <summary>
+            Fonction PostVol
+            POST: api/Vols
+            To protect from overposting attacks, please enable the specific properties you want to bind to, for
+            more details see https://aka.ms/RazorPagesCRUD.
+            </summary>
+        </member>
+        <member name="M:MyAirportWebApi.Controllers.VolsController.DeleteVol(System.Int32)">
+            <summary>
+            Fonction DeleteVol
+            DELETE: api/Vols/5
+            </summary>
+        </member>
+        <member name="T:JC.MyAirport.WebApi.Program">
+            <summary>
+            Program pour la webAPI
+            </summary>
+        </member>
+        <member name="M:JC.MyAirport.WebApi.Program.Main(System.String[])">
+            <summary>
+            Fonction Main
+            </summary>
+        </member>
+        <member name="M:JC.MyAirport.WebApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Fonction pour créer l'HostBuilder
+            </summary>
+        </member>
+        <member name="T:JC.MyAirport.WebApi.Startup">
+            <summary>
+            Classe Startup pour instancier les services
+            </summary>
+        </member>
+        <member name="M:JC.MyAirport.WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Fonction Startup
+            </summary>
+        </member>
+        <member name="P:JC.MyAirport.WebApi.Startup.Configuration">
+            <summary>
+            Objet Configuration
+            </summary>
+        </member>
+        <member name="M:JC.MyAirport.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Fonction ConfigureServices
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+        </member>
+        <member name="M:JC.MyAirport.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Fonction Configure
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+        </member>
     </members>
 </doc>
